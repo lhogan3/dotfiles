@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker load:*)",
+      "Bash(docker run:*)",
+      "Bash(gh issue view:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(curl:*)",
+      "Bash(python3:*)",
+      "Bash(docker create:*)",
+      "Bash(docker cp:*)",
+      "Bash(docker rm:*)",
+      "Bash(git checkout:*)",
+      "WebSearch",
+      "Bash(npm create:*)",
+      "mcp__sleeper__get_league_info",
+      "mcp__sleeper__get_league_users",
+      "mcp__sleeper__get_current_matchups",
+      "mcp__sleeper__analyze_lineup",
+      "mcp__sleeper__get_league_rosters",
+      "mcp__sleeper__get_player_details",
+      "mcp__sleeper__get_waiver_suggestions",
+      "mcp__sleeper__research_player_status"
+    ]
+  }
+}

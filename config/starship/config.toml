@@ -1,0 +1,109 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Official Tokyo Night colours (matches Ghostty's "TokyoNight Night" theme).
+# Separators are Nerd Font rounded caps (U+E0B4) after a ░▒▓ fade-in.
+palette = "tokyonight"
+
+format = """
+[░▒▓](fg:apple)\
+[  ](bg:apple fg:bg_dark)\
+[](bg:blue fg:apple)\
+$directory\
+[](fg:blue bg:bg_git)\
+$git_branch\
+$git_status\
+[](fg:bg_git bg:bg_lang)\
+$nodejs\
+$rust\
+$golang\
+$python\
+$php\
+[](fg:comment bg:bg_time)\
+$time\
+[ ](fg:bg_time)\
+$cmd_duration\
+$line_break\
+$character"""
+
+[palettes.tokyonight]
+# Mapped to the terminal's ANSI slots, so colours come straight from Ghostty's
+# theme (TokyoNight Night in dark mode, TokyoNight Day in light mode).
+bg_dark = "black"         # 0
+apple   = "white"         # 7
+fg      = "bright-white"  # 15
+fg_dark = "white"         # 7
+comment = "bright-black"  # 8
+blue    = "blue"          # 4
+cyan    = "cyan"          # 6
+purple  = "purple"        # 5
+green   = "green"         # 2
+yellow  = "yellow"        # 3
+orange  = "yellow"        # no ANSI orange; use yellow
+red     = "red"           # 1
+bg_git  = "bright-black"  # 8
+bg_lang = "black"         # 0
+bg_time = "black"         # 0
+
+[directory]
+style = "bold fg:bg_dark bg:blue"
+format = "[ $path ]($style)[$read_only]($read_only_style)"
+read_only = " "
+read_only_style = "fg:red bg:blue"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "\U000f0219 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "fg:purple bg:bg_git"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "fg:orange bg:bg_git"
+format = '[($all_status$ahead_behind )]($style)'
+
+[nodejs]
+symbol = ""
+style = "fg:green bg:bg_lang"
+format = '[ $symbol( $version) ]($style)'
+
+[rust]
+symbol = ""
+style = "fg:orange bg:bg_lang"
+format = '[ $symbol( $version) ]($style)'
+
+[golang]
+symbol = ""
+style = "fg:cyan bg:bg_lang"
+format = '[ $symbol( $version) ]($style)'
+
+[python]
+symbol = ""
+style = "fg:yellow bg:bg_lang"
+format = '[ $symbol( $version)( \($virtualenv\)) ]($style)'
+
+[php]
+symbol = ""
+style = "fg:purple bg:bg_lang"
+format = '[ $symbol( $version) ]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "fg:fg_dark bg:bg_time"
+format = "[  $time ]($style)"
+
+[cmd_duration]
+min_time = 2000 # only show for commands taking 2s+
+style = "fg:yellow"
+format = '[ took $duration]($style)'
+
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
+vimcmd_symbol = '[❮](bold purple)'

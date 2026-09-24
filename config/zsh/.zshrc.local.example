@@ -1,0 +1,7 @@
+# Machine-specific overrides (not meant for a shared dotfiles repo)
+# Copy to ~/.zshrc.local and customize for your environment
+
+# Work machine example:
+# export WORK_MODE=1
+# export AWS_PROFILE=work
+# export SLACK_API_TOKEN="..."

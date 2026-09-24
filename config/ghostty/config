@@ -1,0 +1,25 @@
+# --- Appearance ---
+font-family = JetBrainsMono Nerd Font
+font-size = 14
+# Follows macOS light/dark mode
+theme = light:TokyoNight Day,dark:TokyoNight Night
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
+macos-titlebar-style = tabs
+
+# --- Behaviour ---
+# Left Option acts as Alt (fzf Alt-C, Alt-arrow word jumps); right Option still types special chars
+macos-option-as-alt = left
+window-save-state = always
+copy-on-select = clipboard
+confirm-close-surface = false
+mouse-hide-while-typing = true
+shell-integration-features = cursor,sudo,title
+
+# --- Quick Terminal ---
+keybind = global:cmd+shift+g=toggle_quick_terminal
+quick-terminal-position = right
+quick-terminal-screen = mouse
+quick-terminal-animation-duration = 0.2
+quick-terminal-autohide = true
